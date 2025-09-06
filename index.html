@@ -619,7 +619,7 @@
                         <option value="COED">College of Education (COED)</option>
                         <option value="COENG">College of Engineering (COENG)</option>
                         <option value="CONHS">College of Nursing and Health Sciences (CONHS)</option>
-                        <option value="SIIM">School of International and Interdisciplinary Management (SIIM)</option>
+                        <option value="SIIM">Samar Island Institute of Medicine (SIIM)</option>
                         <option value="Mercedes Campus">Mercedes Campus</option>
                         <option value="Paranas Campus">Paranas Campus</option>
                         <option value="Basey Campus">Basey Campus</option>
@@ -642,6 +642,7 @@
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js';
         import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, updateEmail, updatePassword } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js';
         import { getFirestore, doc, setDoc, getDoc, collection, addDoc, getDocs, query, where, orderBy, updateDoc } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js';
+        import { setDoc, doc, serverTimestamp } from "firebase/firestore";
 
         // Firebase configuration
         const firebaseConfig = {
@@ -734,8 +735,8 @@
                     idNumber,
                     fullName,
                     email,
-                    contact,
-                    department,
+                    contactNumber: contact,
+                    department, 
                     createdAt: serverTimestamp(),
                     isAdmin: false
                 });
@@ -1355,5 +1356,4 @@
         });
     </script>
 </body>
-
 </html>
